@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\NilaiController;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,6 @@ use Illuminate\Http\Request;
 */
 
 Route::resource('mahasiswa', MahasiswaController::class);
+Route::get('/nilai/{id}',[NilaiController::class, 'nilai']);
+
+

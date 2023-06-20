@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Kelas;
 use App\Models\Mahasiswa;
+use App\Models\Mahasiswa_Matakuliah;
 use Illuminate\Http\Request;
 
 class MahasiswaController extends Controller
@@ -123,4 +124,5 @@ class MahasiswaController extends Controller
         return redirect()->route('mahasiswa.index')
             -> with('success', 'Mahasiswa Berhasil Dihapus');
     }
+
 }

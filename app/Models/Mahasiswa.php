@@ -19,13 +19,17 @@ class Mahasiswa extends Model
         'Nama',
         'Kelas',
         'Jurusan',
-        'No_Handphone',
-        'Email',
-        'TTL',
     ];
 
-    public function kelas()
-    {
+    public function kelas(){
         return $this->belongsTo(Kelas::class);
+    }
+    public function matkul(){
+        return $this->belongsToMany(Matakuliah::class)
+        ->withTimestamps();
+    }
+    public function mahasiswaMatkul(){
+        return $this->hasMany(Mahasiswa_MataKuliah::class)
+        ->withTimestamps();
     }
 };
